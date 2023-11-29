@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Bonkers.Characters
+namespace Player
 {
     public class DamageDealer : MonoBehaviour
     {

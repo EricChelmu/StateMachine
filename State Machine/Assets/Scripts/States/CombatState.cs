@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Bonkers.Characters
+namespace Player
 {
     public class CombatState : State
     {

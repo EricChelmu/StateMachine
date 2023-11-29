@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditorInternal;
 using UnityEngine;
 
-namespace Bonkers.Characters
+namespace Player
 {
     public class StandingState : State
     {
@@ -33,11 +33,10 @@ namespace Bonkers.Characters
             sprint = false;
             drawWeapon = false;
             input = Vector2.zero;
-
+            velocity = Vector3.zero;
             currentVelocity = Vector3.zero;
             gravityVelocity.y = 0;
 
-            velocity = character.playerVelocity;
             playerSpeed = character.playerSpeed;
             grounded = character.controller.isGrounded;
             gravityValue = character.gravityValue;
