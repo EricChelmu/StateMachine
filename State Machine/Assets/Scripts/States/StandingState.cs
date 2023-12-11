@@ -123,6 +123,10 @@ namespace Player
         {
             base.Exit();
 
+            jump = false;
+            crouch = false;
+            sprint = false;
+
             gravityVelocity.y = 0f;
             character.playerVelocity = new Vector3(input.x, 0, input.y);
 

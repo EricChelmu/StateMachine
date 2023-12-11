@@ -76,5 +76,12 @@ namespace Player
             gravityVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
         }
 
+        public override void Exit()
+        {
+            base.Exit();
+
+            character.animator.ResetTrigger("jump");
+        }
+
     }
 }

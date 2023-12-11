@@ -35,7 +35,12 @@ namespace Player
             timePassed += Time.deltaTime;
         }
 
+        public override void Exit()
+        {
+            base.Exit();
 
+            character.animator.ResetTrigger("jump");
+        }
 
     }
 }

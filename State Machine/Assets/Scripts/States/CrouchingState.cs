@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Windows;
 
 namespace Player
 {
     public class CrouchingState : State
     {
         float playerSpeed;
-        bool belowCeiling;
-        bool crouchHeld;
+        //bool belowCeiling;
+        bool crouchExit;
 
         bool grounded;
         float gravityValue;
@@ -26,8 +27,8 @@ namespace Player
             base.Enter();
 
             character.animator.SetTrigger("crouch");
-            belowCeiling = false;
-            crouchHeld = false;
+            //belowCeiling = false;
+            crouchExit = false;
             gravityVelocity.y = 0;
 
             playerSpeed = character.crouchSpeed;
@@ -52,12 +53,17 @@ namespace Player
         public override void HandleInput()
         {
             base.HandleInput();
-            if (crouchAction.triggered && !belowCeiling)
+            if (crouchAction.triggered)
             {
-                crouchHeld = true;
+                crouchExit = true;
             }
             input = moveAction.ReadValue<Vector2>();
             velocity = new Vector3(input.x, 0, input.y);
+
+            if (crouchAction.triggered)
+            {
+                character.animator.ResetTrigger("crouch");
+            }
 
             velocity = velocity.x * character.cameraTransform.right.normalized + velocity.z * character.cameraTransform.forward.normalized;
             velocity.y = 0f;
@@ -68,7 +74,7 @@ namespace Player
             base.LogicUpdate();
             character.animator.SetFloat("speed", input.magnitude, character.speedDampTime, Time.deltaTime);
 
-            if (crouchHeld)
+            if (crouchExit)
             {
                 stateMachine.ChangeState(character.standing);
             }
@@ -77,7 +83,7 @@ namespace Player
         public override void PhysicsUpdate()
         {
             base.PhysicsUpdate();
-            belowCeiling = CheckCollisionOverlap(character.transform.position + Vector3.up * character.normalColliderHeight);
+            //belowCeiling = CheckCollisionOverlap(character.transform.position + Vector3.up * character.normalColliderHeight);
             gravityVelocity.y += gravityValue * Time.deltaTime;
             grounded = character.controller.isGrounded;
             if (grounded && gravityVelocity.y < 0)
