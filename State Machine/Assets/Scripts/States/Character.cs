@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -50,7 +51,6 @@ namespace Player
         public Animator animator;
         [HideInInspector]
         public Vector3 playerVelocity;
-
 
         // Start is called before the first frame update
         private void Start()
