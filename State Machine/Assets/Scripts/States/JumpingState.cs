@@ -80,7 +80,7 @@ namespace Player
         {
             base.Exit();
 
-            character.animator.ResetTrigger("jump");
+            //character.animator.ResetTrigger("jump");
         }
 
     }

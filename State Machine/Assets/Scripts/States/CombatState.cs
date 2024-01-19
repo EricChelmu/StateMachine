@@ -67,7 +67,7 @@ namespace Player
 
             if (sheathWeapon)
             {
-                character.animator.SetTrigger("sheathWeapon");
+                character.animator.SetTrigger("sheatheWeapon");
                 stateMachine.ChangeState(character.standing);
             }
 

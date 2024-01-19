@@ -70,10 +70,10 @@ namespace Player
             {
                 stateMachine.ChangeState(character.standing);
             }
-            if (sprintJump)
-            {
-                stateMachine.ChangeState(character.sprintjumping);
-            }
+            //if (sprintJump)
+            //{
+            //    stateMachine.ChangeState(character.sprintjumping);
+            //}
         }
 
         public override void PhysicsUpdate()

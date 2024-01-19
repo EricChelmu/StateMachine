@@ -29,6 +29,7 @@ namespace Player
         {
             base.Exit();
             character.animator.applyRootMotion = false;
+            character.animator.ResetTrigger("sprintJump");
         }
 
         public override void LogicUpdate()
@@ -42,8 +43,6 @@ namespace Player
             }
             timePassed += Time.deltaTime;
         }
-
-
 
     }
 }
