@@ -30,7 +30,7 @@ namespace Player
                     if (hit.transform.TryGetComponent(out HealthSystem health))
                     {
                        health.TakeDamage(weaponDamage);
-                        //health.HitVFX(hit.point);
+                       health.HitVFX(hit.point);
                        hasDealtDamage = true;
                     }
                 }
