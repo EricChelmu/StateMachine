@@ -8,7 +8,7 @@ namespace Player
 {
     public class Enemy : MonoBehaviour
     {
-        [SerializeField] float health = 3;
+        [SerializeField] float health = 100;
         [SerializeField] GameObject hitVFX;
         [SerializeField] GameObject ragdoll;
 

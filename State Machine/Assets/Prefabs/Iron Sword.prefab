@@ -152,4 +152,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponLength: 0.89
-  weaponDamage: 1
+  weaponDamage: 25

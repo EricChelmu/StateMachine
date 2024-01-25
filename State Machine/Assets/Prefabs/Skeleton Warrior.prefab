@@ -1701,7 +1701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a251dff2c037df4b9c73d3d4f15226e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 100
   hitVFX: {fileID: 1165458216055158, guid: eeff7fc95b847e24ea570517df74d06d, type: 3}
   ragdoll: {fileID: 8270956644138027894, guid: ea4633a292f69b141ad7aa8f6e87c2a9, type: 3}
   attackCD: 2
@@ -3766,6 +3766,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7909367712642700470}
     m_Modifications:
+    - target: {fileID: 940145454040968489, guid: 39ec6af3eb8c70848b3da75dbf39628f, type: 3}
+      propertyPath: weaponDamage
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4489677676252728369, guid: 39ec6af3eb8c70848b3da75dbf39628f, type: 3}
       propertyPath: m_Name
       value: Skeleton Sword

@@ -571,7 +571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 307c6fe8d2f1d314a98bee78f198d030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 3
   hitVFX: {fileID: 1743637094903878, guid: 021a2f7a2c5bc4449b4c64a66a050e8c, type: 3}
   ragdoll: {fileID: 4836819963096404023, guid: 9b9ccea2a5e49434dba01cd405b6c6d7, type: 3}
 --- !u!4 &6354732651497269394 stripped
