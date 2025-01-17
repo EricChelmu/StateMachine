@@ -1,18 +1,37 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUpItem : MonoBehaviour
+namespace Player
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+
+    public class PickUpItem : Interactable
     {
-        
+        [Header("Item Data")]
+        [SerializeField] string itemName;
+        //[SerializeField] Item item;
+        //[SerializeField] int amount = 1;
+
+        public override void Start()
+        {
+            base.Start();
+            //interactableName = item.itemName;
+            interactableName = itemName;
+        }
+
+        protected override void Interaction()
+        {
+            base.Interaction();
+            print("I put " + itemName + " in my inventory.");
+            Destroy(this.gameObject);
+
+            //animation
+            //animator.SetTrigger("PickUp");
+
+            //add to inventory via events
+            //Events.AddInventoryItem(item,amount);
+
+        }
+
     }
 }
