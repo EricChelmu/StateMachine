@@ -7,6 +7,7 @@ namespace Player
     public class InteractableNPC : Interactable
     {
         private Animator animator;
+        public GameObject npcText;
 
         public override void Start()
         {
@@ -17,9 +18,15 @@ namespace Player
         {
             base.Interaction();
             print("Hello! Unfortunately I don't have a dialog system yet.");
-            animator.SetTrigger("Wave");
+            //animator.SetTrigger("Wave");
+            npcText.SetActive(true);
+            StartCoroutine(HideTextAfterDelay(3f));
+        }
 
-            //Start Dialogue System
+        private IEnumerator HideTextAfterDelay(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            npcText.SetActive(false);
         }
     }
 }

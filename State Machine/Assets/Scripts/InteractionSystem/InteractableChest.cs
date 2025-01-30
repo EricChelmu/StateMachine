@@ -12,6 +12,7 @@ namespace Player
         public bool isLocked;
         public string chestID;
         public bool isOpen;
+        public GameObject chestText;
 
         public override void Start()
         {
@@ -67,16 +68,18 @@ namespace Player
         void CloseChest()
         {
             //Events.ShowLoot(false);
-            animator.SetTrigger("CloseChest");
+            //animator.SetTrigger("CloseChest");
             isOpen = !isOpen;
+            chestText.SetActive(false);
         }
 
         void OpenChest()
         {
             //GetComponent<ItemContainer>().SetLoot();
             //Events.ShowLoot(true);
-            animator.SetTrigger("OpenChest");
+            //animator.SetTrigger("OpenChest");
             isOpen = !isOpen;
+            chestText.SetActive(true);
 
             //Events.OnShowLoot += TriggerChest;
         }
